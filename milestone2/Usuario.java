@@ -15,7 +15,11 @@ public abstract class Usuario implements Cobrable {
 	protected char sexo;
 	protected String email;
 	protected String cuenta_bancaria;
-	protected double salario_mensual;
+	protected double sueldo_base;
+	protected double sueldo_neto_anual;
+	protected double sueldo_neto_mensual;
+	protected double sueldo_bruto_anual;
+	protected double sueldo_bruto_mensual;
 	
 	// Constructor por defecto
 	
@@ -26,7 +30,7 @@ public abstract class Usuario implements Cobrable {
 		this.sexo='-';
 		this.email="";
 		this.cuenta_bancaria="";
-		this.salario_mensual=0.0;
+		this.sueldo_base=0.0;
 	}
 	
 	// Constructor con parametros identificadores (dni y telefono)	
@@ -39,23 +43,23 @@ public abstract class Usuario implements Cobrable {
 		this.sexo='-';
 		this.email="";
 		this.nombre="";
-		this.salario_mensual=0.0;
+		this.sueldo_base=0.0;
 	}
 
 	// Constructor con todos los parametros
 
-	public Usuario(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario_mensual) {
+	public Usuario(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double sueldo_base) {
 		this.nombre = nombre;
 		this.dni = dni;
 		this.num_telefono = num_telefono;
 		this.sexo = sexo;
 		this.email = email;
 		this.cuenta_bancaria = cuenta_bancaria;
-		this.salario_mensual=salario_mensual;
+		this.sueldo_base=sueldo_base;
 	}
-	
-	// Getters y Setters
 
+	// Getters y Setters
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -104,12 +108,55 @@ public abstract class Usuario implements Cobrable {
 		this.cuenta_bancaria = cuenta_bancaria;
 	}
 
+	public double getSueldo_base() {
+		return sueldo_base;
+	}
+
+	public void setSueldo_base(double sueldo_base) {
+		this.sueldo_base = sueldo_base;
+	}
+
+	public double getSueldo_neto_anual() {
+		return sueldo_neto_anual;
+	}
+
+	public void setSueldo_neto_anual(double sueldo_neto_anual) {
+		this.sueldo_neto_anual = sueldo_neto_anual;
+	}
+
+	public double getSueldo_neto_mensual() {
+		return sueldo_neto_mensual;
+	}
+
+	public void setSueldo_neto_mensual(double sueldo_neto_mensual) {
+		this.sueldo_neto_mensual = sueldo_neto_mensual;
+	}
+
+	public double getSueldo_bruto_anual() {
+		return sueldo_bruto_anual;
+	}
+
+	public void setSueldo_bruto_anual(double sueldo_bruto_anual) {
+		this.sueldo_bruto_anual = sueldo_bruto_anual;
+	}
+
+	public double getSueldo_bruto_mensual() {
+		return sueldo_bruto_mensual;
+	}
+
+	public void setSueldo_bruto_mensual(double sueldo_bruto_mensual) {
+		this.sueldo_bruto_mensual = sueldo_bruto_mensual;
+	}
+
 	// Metodo toString
 	
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombre + ", dni=" + dni + ", num_telefono=" + num_telefono + ", sexo=" + sexo
-				+ ", email=" + email + ", cuenta_bancaria=" + cuenta_bancaria + "]";
+		return " [nombre=" + nombre + ", dni=" + dni + ", num_telefono=" + num_telefono + ", sexo=" + sexo
+				+ ", email=" + email + ", cuenta_bancaria=" + cuenta_bancaria + ", sueldo_base=" + sueldo_base
+				+ ", sueldo_neto_anual=" + sueldo_neto_anual + ", sueldo_neto_mensual=" + sueldo_neto_mensual
+				+ ", sueldo_bruto_anual=" + sueldo_bruto_anual + ", sueldo_bruto_mensual=" + sueldo_bruto_mensual + "]";
 	}
+	
 	
 }

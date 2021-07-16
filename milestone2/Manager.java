@@ -1,10 +1,6 @@
 package milestone2;
 
 public class Manager extends Usuario {
-
-	// Atributo sueldo para guardar el sueldo final despues del incremente
-	
-	private double sueldo_final;
 	
 	// Constructores
 	
@@ -12,45 +8,49 @@ public class Manager extends Usuario {
 		super();
 	}
 	
-	public Manager(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario_mensual) {
-		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario_mensual);
+	public Manager(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario) {
+		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
 	}
 	
 	public Manager(String dni, int num_telefono) {
 		super(dni, num_telefono);
 	}	
 	
-	// Metodo cobrar que en Manager se incrementa un 10%
+	// Metodo cobrar que en Manager se asugura un minimo y un maximo y luego incrementa calcula los diferentes sueldos
 	
 	public void cobrar() {
-		this.sueldo_final = salario_mensual*1.10;
 		// Ahora nos aseguramos que se cumplan un minimo y un maximo
-		if(this.sueldo_final<3000.0) {
+		if(this.sueldo_base<3000.0) {
 		// Si es menor le subimos el sueldo al valor minimo
-			this.sueldo_final=3000.0;
-		}else if(this.sueldo_final>5000.0) {
-			this.sueldo_final=5000.0;
+			this.sueldo_base=3000.0;
+		}else if(this.sueldo_base>5000.0) {
+			this.sueldo_base=5000.0;
 		}
-		
+		this.sueldo_bruto_mensual = sueldo_base*1.10;
+		calcularSueldo_neto_mensual();
+		calcularSueldo_neto_anual();
+		calcularSueldo_bruto_anual();
 	}
 	
-	// Getter y Setter
-
-	public double getSueldo_final() {
-		return sueldo_final;
+	public void calcularSueldo_bruto_anual() {
+		// Multiplicmaos por 12 el sueldo bruto mensual
+		this.sueldo_bruto_anual=12*this.sueldo_bruto_mensual;
 	}
-
-	public void setSueldo_final(double sueldo_final) {
-		this.sueldo_final = sueldo_final;
+	
+	public void calcularSueldo_neto_anual() {
+		// Multiplicmaos por 12 el sueldo neto mensual
+		this.sueldo_neto_anual=12*this.sueldo_neto_mensual;
+	}
+	
+	public void calcularSueldo_neto_mensual() {
+		// Restamos un 26% de IRPF
+		this.sueldo_neto_mensual=0.74*this.sueldo_bruto_mensual;
 	}
 	
 	// Metodo toString
 
-	@Override
 	public String toString() {
-		return "Manager [sueldo_final=" + sueldo_final + ", nombre=" + nombre + ", dni=" + dni + ", num_telefono="
-				+ num_telefono + ", sexo=" + sexo + ", email=" + email + ", cuenta_bancaria=" + cuenta_bancaria
-				+ ", salario_mensual=" + salario_mensual + "]";
+		return "Manager:"+super.toString();
 	}
 	
 }

@@ -2,10 +2,6 @@ package milestone2;
 
 public class Employee extends Usuario{
 	
-	// Atributo Sueldo para guardar el sueldo final después de las reducciones
-	
-	protected double sueldo_final;
-	
 	// Constructores
 
 	public Employee() {
@@ -16,33 +12,38 @@ public class Employee extends Usuario{
 		super(dni, num_telefono);
 	}
 
-	public Employee(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario_mensual) {
-		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario_mensual);
+	public Employee(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario) {
+		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
 	}
 	
-	// Metodo cobrar que en Employee reduce un 5% su sueldo mensual, luego dependiendo de si es Junior, Mid o Senior
+	// Metodo cobrar que en Employee reduce un 5% su sueldo base, luego dependiendo de si es Junior, Mid o Senior se aplicara otro %
 	
 	public void cobrar() {
-		this.sueldo_final=salario_mensual*0.95;
+		this.sueldo_bruto_mensual=this.sueldo_base*0.95;
 	}
-
-	// Getter y Setter
 	
-	public double getSueldo_final() {
-		return sueldo_final;
+	// Metodo que guarda el sueldo neto mensual
+	
+	public void calcularSueldo_neto_mensual() {
+		// Como el minimo de IRPF que se ha de añadir es 2% implementamos eso aqui y en las clases hijas sumamos el correcpondiente exta
+		this.sueldo_neto_mensual=this.sueldo_bruto_mensual*0.98;
 	}
-
-	public void setSueldo_final(double sueldo_final) {
-		this.sueldo_final = sueldo_final;
+	
+	public void calcularSueldo_bruto_anual() {
+		// Multiplicmaos por 12 el sueldo bruto mensual
+		this.sueldo_bruto_anual=12*this.sueldo_bruto_mensual;
+	}
+	
+	public void calcularSueldo_neto_anual() {
+		// Multiplicmaos por 12 el sueldo neto mensual
+		this.sueldo_neto_anual=12*this.sueldo_neto_mensual;
 	}
 	
 	// Metodo toString
 
-	@Override
 	public String toString() {
-		return "Employee [sueldo_final=" + sueldo_final + ", nombre=" + nombre + ", dni=" + dni + ", num_telefono="
-				+ num_telefono + ", sexo=" + sexo + ", email=" + email + ", cuenta_bancaria=" + cuenta_bancaria
-				+ ", salario_mensual=" + salario_mensual + "]";
+		String cadena="Empleado:"+super.toString();
+		return cadena;
 	}
 	
 }
