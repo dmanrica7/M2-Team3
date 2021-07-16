@@ -8,7 +8,7 @@ public class Junior extends Employee{
 	}
 	
 	public Junior(Integer telefono, String nombre, String dNI, char sexo, String email, String cuenta,double salarios, double salario) {
-		
+		super(telefono,nombre,dNI,sexo,email.cuenta,salarios,salario);
 	}
 	
 	public void comprobarPrecio() {
