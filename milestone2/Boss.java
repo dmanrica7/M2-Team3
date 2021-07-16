@@ -24,6 +24,11 @@ public class Boss extends Usuario{
 	
 	public void cobrar(){
 		this.sueldo_final = salario_mensual*1.50;
+		// Ahora nos aseguramos que se cumplan un minimo
+		if(this.sueldo_final<8000.0) {
+			// Si es menor le subimos el sueldo al valor minimo
+			this.sueldo_final=8000.0;
+		}
 	}
 	
 	// Getter y Setter

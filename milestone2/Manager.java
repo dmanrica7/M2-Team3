@@ -24,6 +24,13 @@ public class Manager extends Usuario {
 	
 	public void cobrar() {
 		this.sueldo_final = salario_mensual*1.10;
+		// Ahora nos aseguramos que se cumplan un minimo y un maximo
+		if(this.sueldo_final<3000.0) {
+		// Si es menor le subimos el sueldo al valor minimo
+			this.sueldo_final=3000.0;
+		}else if(this.sueldo_final>5000.0) {
+			this.sueldo_final=5000.0;
+		}
 		
 	}
 	
