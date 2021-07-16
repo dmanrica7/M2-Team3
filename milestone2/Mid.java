@@ -22,12 +22,13 @@ public class Mid extends Employee{
 	public void cobrar() {
 		super.cobrar();
 		// El metodo cobrar de Employee reduce un 5%, ahora faltaria reducir otro 5%
-		this.sueldo_final=this.salario_mensual*0.95;
+		this.sueldo_final-=this.salario_mensual*0.05;
 		// Ahora nos aseguramos que se cumplan un minimo y un maximo
 		if(this.sueldo_final<1800.0) {
 			// Si es menor le subimos el sueldo al valor minimo
 			this.sueldo_final=1800.0;
 		}else if(this.sueldo_final>2500.0) {
+			// Si es mayor le bajamso el sueldo al valor maximo
 			this.sueldo_final=2500.0;
 		}
 	}
