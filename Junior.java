@@ -12,12 +12,14 @@ public class Junior extends Employee{
 	}
 	
 	public void comprobarPrecio() {
-		this.sueldo_final=this.salarios*0.85;
-		if (this.sueldo_final > 1600) {
-			this.sueldo_final = 1600;
-		}else if (this.sueldo_final < 900) {
-			this.sueldo_final = 900;
+		
+		if (this.salarios > 1600) {
+			this.salarios = 1600;
+		}else if (this.salarios < 900) {
+			this.salarios= 900;
 		}
+		super.cobrar();
+		this.salarios=this.salarios*0.85;
 		
 	}
 
