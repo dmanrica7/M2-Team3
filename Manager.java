@@ -25,4 +25,20 @@ public class Manager extends Usuario {
 		this.salarioF = salarios*1.10;
 		
 	}
+	//Getter y Setters
+
+		public double getSalarioF() {
+			return salarioF;
+		}
+
+		public void setSalarioF(double salarioF) {
+			this.salarioF = salarioF;
+		}
+
+		
+		@Override
+		public String toString() {
+			return "Manager [salarioF=" + salarioF + ", Telefono=" + Telefono + ", Nombre=" + Nombre + ", DNI=" + DNI
+					+ ", Sexo=" + Sexo + ", Email=" + Email + ", Cuenta=" + Cuenta + ", salarios=" + salarios + "]";
+		}
 }
