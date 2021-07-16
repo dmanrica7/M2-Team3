@@ -1,30 +1,29 @@
 package milestone2;
 
-public class Volunteer extends Usuario{
+public class Boss extends Usuario{
 	
-	// Atributo Sueldo final para asegurarnos que no cobre
+	// Atributo sueldo para guardar el salario final despues del incremento
 	
 	private double sueldo_final;
 
 	// Constructores
 	
-	public Volunteer() {
+	public Boss() {
 		super();
 	}
 
-	public Volunteer(String dni, int num_telefono) {
+	public Boss(String dni, int num_telefono) {
 		super(dni, num_telefono);
 	}
 
-	public Volunteer(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria,
-			double salario_mensual) {
+	public Boss(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario_mensual) {
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario_mensual);
 	}
 	
-	// Metodo cobrar que en el caso de Volunteer se impondra un sueldo final de 0.0 ya que no cobra
+	// Metodo cobrar que incrementa un 50% 
 	
-	public void cobrar() {
-		this.sueldo_final=0.0;
+	public void cobrar(){
+		this.sueldo_final = salario_mensual*1.50;
 	}
 	
 	// Getter y Setter
@@ -41,7 +40,7 @@ public class Volunteer extends Usuario{
 	
 	@Override
 	public String toString() {
-		return "Volunteer [sueldo_final=" + sueldo_final + ", nombre=" + nombre + ", dni=" + dni + ", num_telefono="
+		return "Boss [sueldo_final=" + sueldo_final + ", nombre=" + nombre + ", dni=" + dni + ", num_telefono="
 				+ num_telefono + ", sexo=" + sexo + ", email=" + email + ", cuenta_bancaria=" + cuenta_bancaria
 				+ ", salario_mensual=" + salario_mensual + "]";
 	}

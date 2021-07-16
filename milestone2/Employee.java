@@ -20,10 +20,10 @@ public class Employee extends Usuario{
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario_mensual);
 	}
 	
-	// Metodo cobrar que en Employee reduce un 15% su sueldo mensual
+	// Metodo cobrar que en Employee reduce un 5% su sueldo mensual, luego dependiendo de si es Junior, Mid o Senior
 	
 	public void cobrar() {
-		this.sueldo_final=salario_mensual*0.85;
+		this.sueldo_final=salario_mensual*0.95;
 	}
 
 	// Getter y Setter
