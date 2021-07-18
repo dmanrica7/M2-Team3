@@ -12,18 +12,21 @@ public class Volunteer extends Usuario{
 		super();
 		// Inicializamos a false
 		this.ayuda=false;
+		cobrar();
 	}
 
 	public Volunteer(String dni, int num_telefono) {
 		super(dni, num_telefono);
 		// Inicializamos a false
 		this.ayuda=false;
+		cobrar();
 	}
 
 	public Volunteer(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario) {
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
 		// Inicializamos a false
 		this.ayuda=false;
+		cobrar();
 	}
 	
 	// Metodo cobrar que en el caso de Volunteer guardara en sueldo la ayuda que pueda tener del gobierno

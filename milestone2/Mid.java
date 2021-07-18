@@ -6,15 +6,18 @@ public class Mid extends Employee{
 	
 	public Mid() {
 		super();
+		cobrar();
 	}
 
 	public Mid(String dni, int num_telefono) {
 		super(dni, num_telefono);
+		cobrar();
 	}
 
 	public Mid(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria,
 			double salario) {
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
+		cobrar();
 	}
 	
 	// Metodo cobrar que en el caso de Mid se asegura que haya un minimo y un maximo y rebaja un 10%

@@ -6,14 +6,17 @@ public class Senior extends Employee{
 	
 	public Senior() {
 		super();
+		cobrar();
 	}
 
 	public Senior(String dni, int num_telefono) {
 		super(dni, num_telefono);
+		cobrar();
 	}
 
 	public Senior(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario) {
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
+		cobrar();
 	}
 	
 	// Metodo cobrar que reduce un 5% el sueldo base y asegura que haya un minimo y un maximo

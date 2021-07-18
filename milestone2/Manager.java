@@ -6,14 +6,17 @@ public class Manager extends Usuario {
 	
 	public Manager() {
 		super();
+		cobrar();
 	}
 	
 	public Manager(String nombre, String dni, int num_telefono, char sexo, String email, String cuenta_bancaria, double salario) {
 		super(nombre, dni, num_telefono, sexo, email, cuenta_bancaria, salario);
+		cobrar();
 	}
 	
 	public Manager(String dni, int num_telefono) {
 		super(dni, num_telefono);
+		cobrar();
 	}	
 	
 	// Metodo cobrar que en Manager se asugura un minimo y un maximo y luego incrementa calcula los diferentes sueldos
