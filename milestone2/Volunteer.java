@@ -78,7 +78,7 @@ public class Volunteer extends Usuario{
 	// Metodo toString
 	
 	public String toString() {
-		return "Volunteer:"+super.toString();
+		return "Volunteer:"+super.toString()+" Ayuda: "+this.ayuda;
 	}
 	
 }

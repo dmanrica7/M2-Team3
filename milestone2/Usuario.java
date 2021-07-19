@@ -5,7 +5,7 @@ package milestone2;
  */
 
 
-public abstract class Usuario implements Cobrable {
+public abstract class Usuario{
 	
 	// Atributos
 	
@@ -58,6 +58,16 @@ public abstract class Usuario implements Cobrable {
 		this.sueldo_base=sueldo_base;
 	}
 
+	// Metodos abtractos
+	
+	public abstract void cobrar();
+	
+	public abstract void calcularSueldo_bruto_anual();
+	
+	public abstract void calcularSueldo_neto_anual();
+	
+	public abstract void calcularSueldo_neto_mensual();
+	
 	// Getters y Setters
 	
 	public String getNombre() {

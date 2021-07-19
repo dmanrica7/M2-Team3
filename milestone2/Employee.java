@@ -1,6 +1,6 @@
 package milestone2;
 
-public abstract class Employee extends Usuario{
+public class Employee extends Usuario{
 	
 	// Constructores
 
